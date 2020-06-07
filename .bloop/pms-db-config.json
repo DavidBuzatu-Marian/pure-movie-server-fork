@@ -1,0 +1,860 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "pms-db-config",
+        "directory": "/mnt/e/BusyMachines/pure-movie-server/pms-utils/db-config",
+        "workspaceDir": "/mnt/e/BusyMachines/pure-movie-server",
+        "sources": [
+            "/mnt/e/BusyMachines/pure-movie-server/pms-utils/db-config/src/main/scala-2.12",
+            "/mnt/e/BusyMachines/pure-movie-server/pms-utils/db-config/src/main/scala",
+            "/mnt/e/BusyMachines/pure-movie-server/pms-utils/db-config/src/main/java",
+            "/mnt/e/BusyMachines/pure-movie-server/pms-utils/db-config/target/scala-2.12/src_managed/main"
+        ],
+        "dependencies": [
+            "pms-config",
+            "pms-effects"
+        ],
+        "classpath": [
+            "/mnt/e/BusyMachines/pure-movie-server/.bloop/pms-config/scala-2.12/classes",
+            "/mnt/e/BusyMachines/pure-movie-server/.bloop/pms-effects/scala-2.12/classes",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-core_2.12/0.10.1/pureconfig-core_2.12-0.10.1.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/pureharm-core-phantom_2.12/0.0.2-M8/pureharm-core-phantom_2.12-0.0.2-M8.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/co/fs2/fs2-core_2.12/1.0.4/fs2-core_2.12-1.0.4.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/tpolecat/doobie-free_2.12/0.7.0-M5/doobie-free_2.12-0.7.0-M5.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_2.12/1.3.0/cats-effect_2.12-1.3.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/discipline_2.12/0.9.0/discipline_2.12-0.9.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.12/1.6.0/cats-core_2.12-1.6.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-generic_2.12/0.10.1/pureconfig-generic_2.12-0.10.1.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig_2.12/0.10.1/pureconfig_2.12-0.10.1.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-macros_2.12/0.10.1/pureconfig-macros_2.12-0.10.1.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.12/0.1.5/sourcecode_2.12-0.1.5.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/catalysts-macros_2.12/0.6/catalysts-macros_2.12-0.6.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/busymachines-commons-core_2.12/0.3.0-RC10/busymachines-commons-core_2.12-0.3.0-RC10.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/macro-compat_2.12/1.1.1/macro-compat_2.12-1.1.1.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.12/1.6.0/cats-kernel_2.12-1.6.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-laws_2.12/1.6.0/cats-laws_2.12-1.6.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/tpolecat/doobie-core_2.12/0.7.0-M5/doobie-core_2.12-0.7.0-M5.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel-laws_2.12/1.6.0/cats-kernel-laws_2.12-1.6.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scodec/scodec-bits_2.12/1.1.9/scodec-bits_2.12-1.1.9.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/co/fs2/fs2-io_2.12/1.0.4/fs2-io_2.12-1.0.4.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.12/1.6.0/cats-macros_2.12-1.6.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.12/0.3.0/scala-collection-compat_2.12-0.3.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/flywaydb/flyway-core/5.2.4/flyway-core-5.2.4.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-free_2.12/1.6.0/cats-free_2.12-1.6.0.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.11/scala-reflect-2.12.11.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/catalysts-platform_2.12/0.6/catalysts-platform_2.12-0.6.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalacheck/scalacheck_2.12/1.13.5/scalacheck_2.12-1.13.5.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.3.3/config-1.3.3.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/pureharm-effects-cats_2.12/0.0.2-M8/pureharm-effects-cats_2.12-0.0.2-M8.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/machinist_2.12/0.6.6/machinist_2.12-0.6.6.jar",
+            "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.jar"
+        ],
+        "out": "/mnt/e/BusyMachines/pure-movie-server/.bloop/pms-db-config",
+        "classesDir": "/mnt/e/BusyMachines/pure-movie-server/.bloop/pms-db-config/scala-2.12/classes",
+        "resources": [
+            "/mnt/e/BusyMachines/pure-movie-server/pms-utils/db-config/src/main/resources",
+            "/mnt/e/BusyMachines/pure-movie-server/pms-utils/db-config/target/scala-2.12/resource_managed/main"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.12.11",
+            "options": [
+                "-deprecation",
+                "-encoding",
+                "utf-8",
+                "-Yrangepos",
+                "-explaintypes",
+                "-feature",
+                "-language:existentials",
+                "-language:higherKinds",
+                "-language:implicitConversions",
+                "-unchecked",
+                "-Xcheckinit",
+                "-Xfuture",
+                "-Xlint:adapted-args",
+                "-Xlint:by-name-right-associative",
+                "-Xlint:constant",
+                "-Xlint:delayedinit-select",
+                "-Xlint:doc-detached",
+                "-Xlint:inaccessible",
+                "-Xlint:infer-any",
+                "-Xlint:missing-interpolator",
+                "-Xlint:nullary-override",
+                "-Xlint:nullary-unit",
+                "-Xlint:option-implicit",
+                "-Xlint:package-object-classes",
+                "-Xlint:poly-implicit-overload",
+                "-Xlint:private-shadow",
+                "-Xlint:stars-align",
+                "-Xlint:type-parameter-shadow",
+                "-Xlint:unsound-match",
+                "-Yno-adapted-args",
+                "-Ywarn-extra-implicit",
+                "-Ywarn-inaccessible",
+                "-Ywarn-infer-any",
+                "-Ywarn-nullary-override",
+                "-Ywarn-nullary-unit",
+                "-Ywarn-numeric-widen",
+                "-Ywarn-unused:implicits",
+                "-Ywarn-unused:imports",
+                "-Ywarn-unused:locals",
+                "-Ywarn-unused:params",
+                "-Ywarn-unused:patvars",
+                "-Ywarn-unused:privates",
+                "-Ywarn-value-discard",
+                "-Ypartial-unification",
+                "-P:bm4:no-filtering:y",
+                "-P:bm4:no-map-id:y",
+                "-P:bm4:no-tupling:y",
+                "-P:bm4:implicit-patterns:y",
+                "-Xplugin:/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/olegpy/better-monadic-for_2.12/0.3.0/better-monadic-for_2.12-0.3.0.jar"
+            ],
+            "jars": [
+                "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar",
+                "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar",
+                "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11.jar",
+                "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.12/jansi-1.12.jar",
+                "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.11/scala-reflect-2.12.11.jar",
+                "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.11/scala-compiler-2.12.11.jar"
+            ],
+            "analysis": "/mnt/e/BusyMachines/pure-movie-server/pms-utils/db-config/target/streams/compile/bloopAnalysisOut/_global/streams/inc_compile_2.12.zip",
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/usr/lib/jvm/java-8-openjdk-amd64/jre",
+                "options": [
+                    "-Duser.dir=/mnt/e/BusyMachines/pure-movie-server"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.11",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-reflect",
+                    "version": "2.12.11",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-reflect",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.11/scala-reflect-2.12.11.jar"
+                        },
+                        {
+                            "name": "scala-reflect",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.11/scala-reflect-2.12.11-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.pureconfig",
+                    "name": "pureconfig-core_2.12",
+                    "version": "0.10.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "pureconfig-core_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-core_2.12/0.10.1/pureconfig-core_2.12-0.10.1.jar"
+                        },
+                        {
+                            "name": "pureconfig-core_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-core_2.12/0.10.1/pureconfig-core_2.12-0.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-sbt",
+                    "name": "test-interface",
+                    "version": "1.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "test-interface",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar"
+                        },
+                        {
+                            "name": "test-interface",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.busymachines",
+                    "name": "pureharm-core-phantom_2.12",
+                    "version": "0.0.2-M8",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "pureharm-core-phantom_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/pureharm-core-phantom_2.12/0.0.2-M8/pureharm-core-phantom_2.12-0.0.2-M8.jar"
+                        },
+                        {
+                            "name": "pureharm-core-phantom_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/pureharm-core-phantom_2.12/0.0.2-M8/pureharm-core-phantom_2.12-0.0.2-M8-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "co.fs2",
+                    "name": "fs2-core_2.12",
+                    "version": "1.0.4",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "fs2-core_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/co/fs2/fs2-core_2.12/1.0.4/fs2-core_2.12-1.0.4.jar"
+                        },
+                        {
+                            "name": "fs2-core_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/co/fs2/fs2-core_2.12/1.0.4/fs2-core_2.12-1.0.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.tpolecat",
+                    "name": "doobie-free_2.12",
+                    "version": "0.7.0-M5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "doobie-free_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/tpolecat/doobie-free_2.12/0.7.0-M5/doobie-free_2.12-0.7.0-M5.jar"
+                        },
+                        {
+                            "name": "doobie-free_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/tpolecat/doobie-free_2.12/0.7.0-M5/doobie-free_2.12-0.7.0-M5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-effect_2.12",
+                    "version": "1.3.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-effect_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_2.12/1.3.0/cats-effect_2.12-1.3.0.jar"
+                        },
+                        {
+                            "name": "cats-effect_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_2.12/1.3.0/cats-effect_2.12-1.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "discipline_2.12",
+                    "version": "0.9.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "discipline_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/discipline_2.12/0.9.0/discipline_2.12-0.9.0.jar"
+                        },
+                        {
+                            "name": "discipline_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/discipline_2.12/0.9.0/discipline_2.12-0.9.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-core_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-core_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.12/1.6.0/cats-core_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-core",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.12/1.6.0/cats-core_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.pureconfig",
+                    "name": "pureconfig-generic_2.12",
+                    "version": "0.10.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "pureconfig-generic_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-generic_2.12/0.10.1/pureconfig-generic_2.12-0.10.1.jar"
+                        },
+                        {
+                            "name": "pureconfig-generic_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-generic_2.12/0.10.1/pureconfig-generic_2.12-0.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.pureconfig",
+                    "name": "pureconfig_2.12",
+                    "version": "0.10.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "pureconfig",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig_2.12/0.10.1/pureconfig_2.12-0.10.1.jar"
+                        },
+                        {
+                            "name": "pureconfig_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig_2.12/0.10.1/pureconfig_2.12-0.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.pureconfig",
+                    "name": "pureconfig-macros_2.12",
+                    "version": "0.10.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "pureconfig-macros_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-macros_2.12/0.10.1/pureconfig-macros_2.12-0.10.1.jar"
+                        },
+                        {
+                            "name": "pureconfig-macros_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/pureconfig/pureconfig-macros_2.12/0.10.1/pureconfig-macros_2.12-0.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.lihaoyi",
+                    "name": "sourcecode_2.12",
+                    "version": "0.1.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "sourcecode_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.12/0.1.5/sourcecode_2.12-0.1.5.jar"
+                        },
+                        {
+                            "name": "sourcecode_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/sourcecode_2.12/0.1.5/sourcecode_2.12-0.1.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "catalysts-macros_2.12",
+                    "version": "0.6",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "catalysts-macros_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/catalysts-macros_2.12/0.6/catalysts-macros_2.12-0.6.jar"
+                        },
+                        {
+                            "name": "catalysts-macros_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/catalysts-macros_2.12/0.6/catalysts-macros_2.12-0.6-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.busymachines",
+                    "name": "busymachines-commons-core_2.12",
+                    "version": "0.3.0-RC10",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "busymachines-commons-core",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/busymachines-commons-core_2.12/0.3.0-RC10/busymachines-commons-core_2.12-0.3.0-RC10.jar"
+                        },
+                        {
+                            "name": "busymachines-commons-core_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/busymachines-commons-core_2.12/0.3.0-RC10/busymachines-commons-core_2.12-0.3.0-RC10-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "macro-compat_2.12",
+                    "version": "1.1.1",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "macro-compat_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/macro-compat_2.12/1.1.1/macro-compat_2.12-1.1.1.jar"
+                        },
+                        {
+                            "name": "macro-compat_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/macro-compat_2.12/1.1.1/macro-compat_2.12-1.1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-effect_2.12",
+                    "version": "1.3.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-effect",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_2.12/1.3.0/cats-effect_2.12-1.3.0.jar"
+                        },
+                        {
+                            "name": "cats-effect_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_2.12/1.3.0/cats-effect_2.12-1.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-core_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-core",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.12/1.6.0/cats-core_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-core",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.12/1.6.0/cats-core_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-kernel_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-kernel",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.12/1.6.0/cats-kernel_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-kernel_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.12/1.6.0/cats-kernel_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-laws_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-laws_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-laws_2.12/1.6.0/cats-laws_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-laws_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-laws_2.12/1.6.0/cats-laws_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.tpolecat",
+                    "name": "doobie-core_2.12",
+                    "version": "0.7.0-M5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "doobie-core_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/tpolecat/doobie-core_2.12/0.7.0-M5/doobie-core_2.12-0.7.0-M5.jar"
+                        },
+                        {
+                            "name": "doobie-core_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/tpolecat/doobie-core_2.12/0.7.0-M5/doobie-core_2.12-0.7.0-M5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-kernel-laws_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-kernel-laws_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel-laws_2.12/1.6.0/cats-kernel-laws_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-kernel-laws_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel-laws_2.12/1.6.0/cats-kernel-laws_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scodec",
+                    "name": "scodec-bits_2.12",
+                    "version": "1.1.9",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scodec-bits_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scodec/scodec-bits_2.12/1.1.9/scodec-bits_2.12-1.1.9.jar"
+                        },
+                        {
+                            "name": "scodec-bits_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scodec/scodec-bits_2.12/1.1.9/scodec-bits_2.12-1.1.9-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "co.fs2",
+                    "name": "fs2-io_2.12",
+                    "version": "1.0.4",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "fs2-io_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/co/fs2/fs2-io_2.12/1.0.4/fs2-io_2.12-1.0.4.jar"
+                        },
+                        {
+                            "name": "fs2-io_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/co/fs2/fs2-io_2.12/1.0.4/fs2-io_2.12-1.0.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-kernel_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-kernel_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.12/1.6.0/cats-kernel_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-kernel_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.12/1.6.0/cats-kernel_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-macros_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-macros",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.12/1.6.0/cats-macros_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-macros",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.12/1.6.0/cats-macros_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang.modules",
+                    "name": "scala-collection-compat_2.12",
+                    "version": "0.3.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-collection-compat_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.12/0.3.0/scala-collection-compat_2.12-0.3.0.jar"
+                        },
+                        {
+                            "name": "scala-collection-compat_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.12/0.3.0/scala-collection-compat_2.12-0.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.flywaydb",
+                    "name": "flyway-core",
+                    "version": "5.2.4",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "flyway-core",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/flywaydb/flyway-core/5.2.4/flyway-core-5.2.4.jar"
+                        },
+                        {
+                            "name": "flyway-core",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/flywaydb/flyway-core/5.2.4/flyway-core-5.2.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-free_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-free_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-free_2.12/1.6.0/cats-free_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-free",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-free_2.12/1.6.0/cats-free_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "catalysts-platform_2.12",
+                    "version": "0.6",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "catalysts-platform_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/catalysts-platform_2.12/0.6/catalysts-platform_2.12-0.6.jar"
+                        },
+                        {
+                            "name": "catalysts-platform_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/catalysts-platform_2.12/0.6/catalysts-platform_2.12-0.6-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scalacheck",
+                    "name": "scalacheck_2.12",
+                    "version": "1.13.5",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scalacheck_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalacheck/scalacheck_2.12/1.13.5/scalacheck_2.12-1.13.5.jar"
+                        },
+                        {
+                            "name": "scalacheck_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalacheck/scalacheck_2.12/1.13.5/scalacheck_2.12-1.13.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.typesafe",
+                    "name": "config",
+                    "version": "1.3.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "config",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.3.3/config-1.3.3.jar"
+                        },
+                        {
+                            "name": "config",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.3.3/config-1.3.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-macros_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-macros_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.12/1.6.0/cats-macros_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-macros",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.12/1.6.0/cats-macros_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.busymachines",
+                    "name": "pureharm-effects-cats_2.12",
+                    "version": "0.0.2-M8",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "pureharm-effects-cats",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/pureharm-effects-cats_2.12/0.0.2-M8/pureharm-effects-cats_2.12-0.0.2-M8.jar"
+                        },
+                        {
+                            "name": "pureharm-effects-cats_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/busymachines/pureharm-effects-cats_2.12/0.0.2-M8/pureharm-effects-cats_2.12-0.0.2-M8-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "cats-free_2.12",
+                    "version": "1.6.0",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "cats-free",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-free_2.12/1.6.0/cats-free_2.12-1.6.0.jar"
+                        },
+                        {
+                            "name": "cats-free",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-free_2.12/1.6.0/cats-free_2.12-1.6.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.typelevel",
+                    "name": "machinist_2.12",
+                    "version": "0.6.6",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "machinist_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/machinist_2.12/0.6.6/machinist_2.12-0.6.6.jar"
+                        },
+                        {
+                            "name": "machinist_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/machinist_2.12/0.6.6/machinist_2.12-0.6.6-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.chuusai",
+                    "name": "shapeless_2.12",
+                    "version": "2.3.3",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "shapeless_2.12",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.jar"
+                        },
+                        {
+                            "name": "shapeless_2.12",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.11",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/home/david/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.11/scala-library-2.12.11-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}

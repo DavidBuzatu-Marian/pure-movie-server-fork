@@ -3,7 +3,7 @@ package pms.service.movie
 import java.time.LocalDate
 
 import pms.algebra.imdb._
-import pms.algebra.movie._
+import pms.algebra.movie.{_}
 import pms.algebra.user._
 import pms.core.Fail
 import pms.effects._
@@ -24,7 +24,7 @@ final class IMDBService[F[_]] private (
   // search query, and then you get the link to your first search result, and gather
   // all information from there. From there you can gather much more, at the cost
   // of two external requests instead of just one.
-  def scrapeIMDBForTitle(title:              TitleQuery)(implicit authCtx: AuthCtx): F[Movie] =
+  def scrapeIMDBForTitle(title: TitleQuery)(implicit authCtx: AuthCtx): F[Movie] =
     for {
       maybe: Option[IMDBMovie] <- imdbAlgebra.scrapeMovieByTitle(title)
       //TODO: this is a fairly common shape transformation, F[Option[A]] into F[B],
@@ -54,6 +54,7 @@ final class IMDBService[F[_]] private (
         val ld   = LocalDate.of(year.getValue, 1, 1)
         ReleaseDate(ld)
       },
+      imageURL = MovieImageURL(ImageURL.despook(imdb.imageURL))
     )
 }
 

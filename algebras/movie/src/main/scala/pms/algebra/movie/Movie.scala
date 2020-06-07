@@ -12,4 +12,5 @@ final case class Movie(
   id:   MovieID,
   name: MovieTitle,
   date: Option[ReleaseDate] = None,
+  imageURL: MovieImageURL
 )

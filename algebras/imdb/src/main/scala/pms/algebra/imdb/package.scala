@@ -19,4 +19,7 @@ package object imdb {
 
   object ReleaseYear extends PhantomType[Year]
   type ReleaseYear = ReleaseYear.Type
+
+  object ImageURL extends PhantomType[String]
+  type ImageURL = ImageURL.Type
 }

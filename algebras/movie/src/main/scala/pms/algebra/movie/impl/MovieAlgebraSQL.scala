@@ -34,34 +34,48 @@ private[movie] object MovieAlgebraSQL {
   implicit protected val releaseDateMeta: Meta[ReleaseDate] =
     Meta[LocalDate].imap(ReleaseDate.spook)(ReleaseDate.despook)
 
+  implicit protected val movieImageURL: Meta[MovieImageURL] =
+    Meta[String].imap(MovieImageURL.spook)(MovieImageURL.despook)
+
   //TODO: the columns for the entire "movies" column can be extracted
   // in a doobie Fragment and reused. Unfortunately stitching together
   // fragments is a bit clunky.
   // Same thing applies for all SQL definitions, for users, authentication, etc.
   // See doobie documentation:
   // https://tpolecat.github.io/doobie/docs/08-Fragments.html
-  def findByIDQuery(id: MovieID): ConnectionIO[Option[Movie]] =
-    sql"""SELECT id, name, date FROM movies WHERE id=$id""".query[Movie].option
+
+  // creating defs and doobie Fragments
+  val selectAll = fr"SELECT id, name, date, imageURL FROM movies "
+  def insertAll(name: MovieTitle, date: Option[ReleaseDate], imageURL: MovieImageURL) =
+    fr"INSERT INTO movies(name, date, imageURL) VALUES($name, $date, $imageURL)"
+
+  def findByIDQuery(id: MovieID): ConnectionIO[Option[Movie]] = {
+    val whereCondition = fr"WHERE id=$id"
+    val sqlQuery = selectAll ++ whereCondition
+    sqlQuery.query[Movie].option
+  }
 
   def fetchByIDQuery(id: MovieID): ConnectionIO[Movie] =
     findByIDQuery(id).flatMap(_.liftTo[ConnectionIO](MovieNotFoundAnomaly(id)))
 
   private def insertQuery(mc: MovieCreation): ConnectionIO[MovieID] =
-    sql"""INSERT INTO movies(name, date) VALUES(${mc.name}, ${mc.date})""".update
+    insertAll(mc.name, mc.date, mc.imageURL).update
       .withUniqueGeneratedKeys[MovieID]("id")
 
   private def allQuery: ConnectionIO[List[Movie]] =
-    sql"""SELECT id, name, date FROM movies""".query[Movie].to[List]
+    selectAll.query[Movie].to[List]
 
-  private def betweenQuery(lower: ReleaseDate, upper: ReleaseDate): ConnectionIO[List[Movie]] =
-    sql"""SELECT id, name, date FROM movies WHERE date>=$lower AND date<=$upper"""
-      .query[Movie]
-      .to[List]
+  private def betweenQuery(lower: ReleaseDate, upper: ReleaseDate): ConnectionIO[List[Movie]] = {
+    val whereCondition = fr"WHERE date>=$lower AND date<=$upper"
+    val sqlQuery = selectAll ++ whereCondition
+    sqlQuery.query[Movie].to[List]
+  }
 
-  private def onDateQuery(rd: ReleaseDate): ConnectionIO[List[Movie]] =
-    sql"""SELECT id, name, date FROM movies WHERE date=$rd AND date=$rd"""
-      .query[Movie]
-      .to[List]
+  private def onDateQuery(rd: ReleaseDate): ConnectionIO[List[Movie]] = {
+    val whereCondition = fr"WHERE date=$rd AND date=$rd"
+    val sqlQuery = selectAll ++ whereCondition
+    sqlQuery.query[Movie].to[List]
+  }
 
   private[movie] def findBetween(interval: QueryInterval): ConnectionIO[List[Movie]] = interval match {
     case All() => allQuery

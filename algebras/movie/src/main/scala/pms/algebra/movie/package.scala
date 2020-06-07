@@ -20,6 +20,9 @@ package object movie {
   object ReleaseDate extends PhantomType[LocalDate]
   type ReleaseDate = ReleaseDate.Type
 
+  object MovieImageURL extends PhantomType[String]
+  type MovieImageURL = MovieImageURL.Type
+
   implicit val releaseDateOrder: spire.algebra.Order[ReleaseDate] =
     new spire.algebra.Order[ReleaseDate] {
 

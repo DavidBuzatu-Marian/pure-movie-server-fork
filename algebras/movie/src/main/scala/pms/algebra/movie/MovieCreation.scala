@@ -1,5 +1,6 @@
 package pms.algebra.movie
 
+
 /**
   *
   * See [[Movie]]
@@ -24,4 +25,5 @@ package pms.algebra.movie
 final case class MovieCreation(
   name: MovieTitle,
   date: Option[ReleaseDate],
+  imageURL: MovieImageURL
 )

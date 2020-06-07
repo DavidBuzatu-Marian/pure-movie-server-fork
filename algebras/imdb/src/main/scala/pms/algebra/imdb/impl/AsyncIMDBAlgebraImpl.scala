@@ -38,11 +38,14 @@ final private[imdb] class AsyncIMDBAlgebraImpl[F[_]](
       findList     <- imdbDocument.tryExtract(elementList(".findList tr"))
       firstElement <- findList.headOption
       resultText   <- firstElement.tryExtract(element(".result_text"))
+      resultImage  <- firstElement.tryExtract(element(".primary_photo"))
       titleElement <- resultText.tryExtract(element("a"))
+      imageElement <- resultImage.tryExtract(element("img"))
       title         = IMDBTitle(titleElement.text)
       resultTextStr = resultText.text
       year          = parseYear(resultTextStr)
-    } yield IMDBMovie(title, year)
+      imageURL      = ImageURL(imageElement.attr("src"))
+    } yield IMDBMovie(title, year, imageURL)
 
   private def parseYear(resultTextStr: String): Option[ReleaseYear] = {
     val yearStartPos = resultTextStr.indexOf("(")

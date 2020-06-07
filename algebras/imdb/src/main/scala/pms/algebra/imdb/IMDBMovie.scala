@@ -9,4 +9,5 @@ package pms.algebra.imdb
 final case class IMDBMovie(
   title: IMDBTitle,
   year:  Option[ReleaseYear],
+  imageURL: ImageURL
 )
